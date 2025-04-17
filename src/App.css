@@ -1,0 +1,174 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --app-bg: #fff;
+  --input-bg: #fff;
+  --input-text: #333;
+  --button-bg: #8cc63f;
+  --button-text: #fff;
+  --todo-bg: #f9f9f9;
+  --circle-bg: #ccc;
+  --circle-done: #8cc63f;
+  --border-color: #ddd;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+}
+
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f1f1f1;
+  --app-bg: #111;
+  --input-bg: #222;
+  --input-text: #fff;
+  --button-bg: #8cc63f;
+  --button-text: #fff;
+  --todo-bg: #1e1e1e;
+  --circle-bg: #444;
+  --circle-done: #8cc63f;
+  --border-color: #333;
+  --card-shadow: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.app {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--app-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button.toggle-theme {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.task-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--todo-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.task-status .circle {
+  background: var(--circle-done);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.input-bar {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.input-bar input {
+  flex: 1;
+  padding: 0.7rem;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.input-bar button {
+  padding: 0 1.2rem;
+  font-size: 1.5rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.input-bar button:hover {
+  background: #75a931;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background: var(--todo-bg);
+  padding: 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.circle-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--circle-bg);
+  margin-right: 1rem;
+}
+
+.circle-icon.done {
+  background: var(--circle-done);
+}
+
+.todo-text {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-item input {
+  flex: 1;
+  padding: 0.4rem;
+  background: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.actions button {
+  margin-left: 0.4rem;
+  background: none;
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
